@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Kahraman Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="clickSound" src="ses-efekti.mp3" preload="auto"></audio>
+    <audio id="buttonSound" src="btn-ses-efekt.mp3" preload="auto"></audio>
+    <audio id="gameOverSound" src="game-over.mp3" preload="auto"></audio>
+    <audio id="gameStartSound" src="game-start.mp3" preload="auto"></audio>
+    
+    <div id="startMenu" class="menu">
+        <h1>Kahraman Oyunu</h1>
+        <button id="startButton" class="menu-button">Oyuna Başla</button>
+        <button id="settingsButton" class="menu-button">Ayarlar</button>
+    </div>
+
+    <div id="settingsMenu" class="menu" style="display: none;">
+        <h2>Ayarlar</h2>
+        
+        <div class="settings-group">
+            <h3>Kahraman Rengi</h3>
+            <div class="color-options">
+                <button class="color-option" data-color="#00ff00" style="background-color: #00ff00;"></button>
+                <button class="color-option" data-color="#0000ff" style="background-color: #0000ff;"></button>
+                <button class="color-option" data-color="#ff00ff" style="background-color: #ff00ff;"></button>
+                <button class="color-option" data-color="#ffff00" style="background-color: #ffff00;"></button>
+                <button class="color-option" data-color="#ff8800" style="background-color: #ff8800;"></button>
+                <button class="color-option" data-color="#ff0000" style="background-color: #ff0000;"></button>
+                <button class="color-option" data-color="#00ffff" style="background-color: #00ffff;"></button>
+                <button class="color-option" data-color="#ffffff" style="background-color: #ffffff;"></button>
+                <button class="color-option" data-color="#ff00aa" style="background-color: #ff00aa;"></button>
+                <button class="color-option" data-color="#aa00ff" style="background-color: #aa00ff;"></button>
+            </div>
+        </div>
+
+        <div class="settings-group">
+            <h3>Kahraman Şekli</h3>
+            <div class="shape-options">
+                <button class="shape-option" data-shape="square">Kare</button>
+                <button class="shape-option" data-shape="circle">Daire</button>
+                <button class="shape-option" data-shape="triangle">Üçgen</button>
+            </div>
+        </div>
+
+        <div class="settings-group">
+            <h3>Silah Rengi</h3>
+            <div class="color-options">
+                <button class="color-option bullet-color-option" data-color="#ffff00" style="background-color: #ffff00;"></button>
+                <button class="color-option bullet-color-option" data-color="#ff0000" style="background-color: #ff0000;"></button>
+                <button class="color-option bullet-color-option" data-color="#00ff00" style="background-color: #00ff00;"></button>
+                <button class="color-option bullet-color-option" data-color="#0000ff" style="background-color: #0000ff;"></button>
+                <button class="color-option bullet-color-option" data-color="#ff00ff" style="background-color: #ff00ff;"></button>
+            </div>
+        </div>
+
+        <button id="saveSettings" class="menu-button">Ayarları Kaydet</button>
+        <button id="backButton" class="menu-button">Geri</button>
+    </div>
+
+    <div class="game-container" style="display: none;">
+        <canvas id="gameCanvas"></canvas>
+        <div class="score">Skor: <span id="scoreValue">0</span></div>
+        <div class="high-score">En Yüksek Skor: <span id="highScoreValue">0</span></div>
+        <div id="livesContainer" class="lives-container">
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+            <div class="heart">❤️</div>
+        </div>
+        <button id="restartButton" class="restart-button">Anasayfaya Dön</button>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 
